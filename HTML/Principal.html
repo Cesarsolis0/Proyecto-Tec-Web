@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Bootstrap estilos -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- styles -->
+  <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+<body>
+  
+  <!-- navbar -->
+  <nav class="navbar">
+    <div class="container">
+        <a class="navbar-brand" href="#"><img src="../Img/Logo.png" alt="" height="100px" width="100px"></a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#Contenido-navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <ul class="nav justify-content-end separacion">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" style="color: black;">Categorias</a>
+            <ul class="dropdown-menu dropdown-menu-start">
+              <li><a class="dropdown-item" href="#">No hay Categorias</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16" style="color: black;">
+              <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
+            </svg>
+            </a>
+          </li>
+          <li class="nav-item Icons">
+            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16" style="color: black;">
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+              <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+            </svg>
+            </a>
+          </li>
+        </ul>
+    </div>
+  </nav>
+  <!-- navbar -->
+
+  <!-- elementos -->
+  <section>
+    <div class="container elementos">
+      <h3>Metas Financieras</h3>
+      <a href="#"><svg id="add" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+      </svg></a>
+    </div>
+  <!-- elementos -->
+
+  <!-- tabla 1 -->
+    <div class="tabla-metas">
+      <table class="table table-hover table1">
+        <thead>
+          <tr>
+            <th id="col1" scope="col">Metas</th>
+            <th id="col2" scope="col">Progreso</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>...</td>
+            <td>...</td>
+          </tr>
+          <tr>
+            <td>...</td>
+            <td>...</td>
+          </tr>
+          <tr>
+            <td>...</td>
+            <td>...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <!-- tabla1 -->
+
+  <!-- elementos -->
+  <section>
+    <div class="secciones">
+      <div class="Sec2">
+        <a href="#"><svg id="doc" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-file-earmark" viewBox="0 0 16 16">
+          <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>
+        </svg></a>
+      <h3>Informe</h3>
+      </div>
+
+      <div class="Sec2">
+        <a href="../HTML/Presupuesto.html"><svg id="dollar" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-currency-dollar" viewBox="0 0 16 16">
+          <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z"/>
+        </svg></a>
+      <h3>Presupuesto</h3>
+      </div>
+
+      <div class="Sec2">
+        <button class="btn-tables" data-bs-toggle="modal" data-bs-target="#FormularioCategorias"><svg id="label" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-tag-fill" viewBox="0 0 16 16">
+          <path d="M2 1a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l4.586-4.586a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 6.586 1H2zm4 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+        </svg></button>
+      <h3>Crear categoria</h3>
+      </div>
+    </div>
+  </section>
+  <!-- elementos -->
+
+  <!-- tabla2 -->
+  <section>
+    <h3 class="centrar">Historial de transacciones</h3>
+    <div class="tabla-Presupuesto">
+      <table class="table table-hover table2">
+        <thead>
+        <tr>
+          <th id="col3" scope="col">Fecha</th>
+          <th id="col4" scope="col">categoria</th>
+          <th id="col5" scope="col">Monto(+o-)</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+          </tr>
+          <tr>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+          </tr>
+          <tr>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <!-- tabla2 -->
+
+  <!-- Formulario Crear categoria -->
+  <form>
+    <div class="modal fade" id="FormularioCategorias" aria-hidden="true" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <img src="../Img/logo.png" alt="" height="100px" width="100px">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <h5 class="centrar">Crear Categoria</h5>
+              <div class="mb-3 row centrar">
+                  <input type="text" class="form-control inputs" id="nombreCategoria" placeholder="Nombre de la categoria">
+                  <p id="advertencia"></p>
+                  <button type="button" class="btn-iniciar btn-primary" onclick="CrearCategoria()">Crear Categoría</button>
+              </div>
+              <div class="mb-3 row centrar">
+                <h5 class="centrar">Lista de Categorias</h5>
+                <input type="text" class="form-control inputs" id="nombreCategoria" placeholder="Nombre de la categoria">
+                <p id="advertencia"></p>
+                <button type="button" class="btn-iniciar btn-primary" style="background-color: #E77777;">Borrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </form>
+<!-- Formulario Crear categoria -->
+  
+  
+  <script src="../JAVASCRIPT/code.js"></script>
+<!-- bootstrap script -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>

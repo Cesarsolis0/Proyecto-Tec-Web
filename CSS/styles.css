@@ -1,0 +1,173 @@
+
+.navbar{
+    border-bottom: 1px solid black;
+}
+
+.btn{
+    border: none;
+    background-color: #6EB455;
+    padding: 10px 20px;
+    color: #FFFFFF;
+}
+.btn-rojo{
+    display: inline-block;
+    border: none;
+    border-radius: 10px;
+    background-color: #E77777;
+    padding: 10px 20px;
+    color: #FFFFFF;;
+}
+.cambiar-color{
+    color: #FF8B42;
+    text-decoration: none;
+}
+
+.centrar{
+    text-align: center;
+    justify-content: center;
+}
+.inputs{
+    width: 70%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: -1px 1px 5px #888;
+}
+
+.btn-iniciar{
+    width:70%;
+    padding: 10px;
+    background-color: #FF8B42;
+    text-decoration: none;
+    color:#FFFFFF ;
+    margin: 10px 0px;
+    border: none;
+    margin: 10px;
+}
+
+#add{
+    color:#FF8B42;
+}
+#doc{
+    color: #C1E27E;
+}
+#dollar{
+    color: #FFE066;
+}
+#label{
+    color: #FF8B42;
+}
+.btn-tables{
+    border: none;
+    background-color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 50%;
+
+}
+
+.elementos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+    margin: 20px 0px 20px 110px;
+}
+#col1{
+    background-color: #6EB455;
+    border-radius: 10px 0px 0px 0px;
+}
+#col2{
+    background-color: #6EB455;
+    border-radius: 0px 10px 0px 0px;
+}
+
+.table1{
+    text-align: center;
+    color: #FFFFFF;
+
+}
+
+.table2{
+    text-align: center;
+    color: #FFFFFF;
+}
+#col3{
+    background-color: #FFB54D;
+    border-radius: 10px 0px 0px 0px;
+}
+#col4{
+    background-color: #FFB54D;
+}
+#col5{
+    background-color: #FFB54D;
+    border-radius: 0px 10px 0px 0px;
+}
+
+.table2 thead{
+    text-align: center;
+}
+.container-lg{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+}
+.separacion{
+    gap: 30px;
+}
+
+.secciones{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10%;
+    margin:10px 70px;
+}
+
+.btn-input{
+    background-color: #FFFFFF;
+    border: 1px solid #888;
+    color: black;
+    width: 74%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: -1px 1px 5px #888;
+}
+
+.tabla-metas{
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 75%;
+    margin-left: 13%;
+    text-align: center;
+}
+.tabla-Presupuesto{
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 75%;
+    margin-left: 13%;
+    margin-bottom: 3%;
+    text-align: center;
+}
+
+.table3 th{
+    background-color:#6EB455 ;
+}
+.col1{
+    border-radius: 10px 0px 0px 0px;
+}
+.col2{
+    border-radius: 0px 10px 0px 0px;
+}
+.sec2{
+    display: inline-block;
+}
+.monto{
+    border: 1px solid black;
+    display: flex;
+}
+.table4 th{
+    background-color: #E77777;
+}
+
