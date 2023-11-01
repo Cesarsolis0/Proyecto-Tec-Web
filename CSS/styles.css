@@ -170,4 +170,19 @@
 .table4 th{
     background-color: #E77777;
 }
+.warnings{
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    color: #E77777;
+    padding-top: 20px;
+}
+
+.Exito{
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    color: #6EB455;
+    padding-top: 20px;
+}
 

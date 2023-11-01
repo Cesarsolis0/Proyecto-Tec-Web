@@ -79,10 +79,14 @@
                 <div class="modal-body">
                     <h5 class="centrar">Registrarse</h5>
                     <div class="mb-3 row centrar">
-                        <input type="email" class="form-control inputs" placeholder="Email">
-                        <input type="password" class="form-control inputs" placeholder="Contraseña">
-                        <input type="password" class="form-control inputs" placeholder=" confirme su contraseña">
-                        <button class="btn-iniciar" type="button" data-bs-dismiss="modal">Registrarse</button>
+                        <input id="emailRegister" type="email" class="form-control inputs" placeholder="Email">
+                        <p class="warnings" id="warning1"></p>
+                        <input id="passwordRegister" type="password" class="form-control inputs" placeholder="Contraseña">
+                        <p class="warnings" id="warning2"></p>
+                        <input id="passwordRegister2" type="password" class="form-control inputs" placeholder=" confirme su contraseña">
+                        <p class="warnings" id="warning3"></p>
+                        <button onclick="Registro()" class="btn-iniciar" type="button">Registrarse</button>
+                        <p class="Exito" id="warning4"></p>
                     </div>
                 </div>
               </div>
@@ -90,6 +94,8 @@
           </div>
     </form>
     <!-- Formulario Registro -->
+
+<script src="../JAVASCRIPT/Script.js"></script>
 
 <!-- bootstrap script -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
