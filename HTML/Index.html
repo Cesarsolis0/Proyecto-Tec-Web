@@ -40,60 +40,62 @@
     </section>
     <!-- contenido -->
 
-    <!-- Formulario Inicio Sesion -->
-    <form>
-        <div class="modal fade" id="FormularioIniciosesion" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <img src="../Img/logo.png" alt="" height="100px" width="100px">
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <h5 class="centrar">Inicia Sesion</h5>
-                    <div class="mb-3 row centrar">
-                        <input type="email" class="form-control inputs" placeholder="Email">
-                        <input type="password" class="form-control inputs" placeholder="Contraseña">
-                        <a href="../HTML/Principal.html" class="btn-iniciar">Inicar Sesion</a>
-                        <div>
-                            <label>¿No tienes cuenta?</label>
-                            <a href="#" class="cambiar-color">Registrate Aquí</a>
-                        </div>
-                    </div>
-                </div>
-              </div>
-            </div>
-          </div>
-    </form>
-    <!-- Formulario Inicio Sesion -->
 
-    <!-- Formulario Registro -->
+    <!-- Formulario Iniciosesion -->
     <form>
-        <div class="modal fade" id="FormularioRegistro" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <img src="../Img/logo.png" alt="" height="100px" width="100px">
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <h5 class="centrar">Registrarse</h5>
-                    <div class="mb-3 row centrar">
-                        <input id="emailRegister" type="email" class="form-control inputs" placeholder="Email">
-                        <p class="warnings" id="warning1"></p>
-                        <input id="passwordRegister" type="password" class="form-control inputs" placeholder="Contraseña">
-                        <p class="warnings" id="warning2"></p>
-                        <input id="passwordRegister2" type="password" class="form-control inputs" placeholder=" confirme su contraseña">
-                        <p class="warnings" id="warning3"></p>
-                        <button onclick="Registro()" class="btn-iniciar" type="button">Registrarse</button>
-                        <p class="Exito" id="warning4"></p>
-                    </div>
+      <div class="modal fade" id="FormularioIniciosesion" aria-hidden="true" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <img src="../Img/logo.png" alt="" height="100px" width="100px">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <h5 class="centrar">Inicia Sesion</h5>
+              <div class="mb-3 row centrar">
+                <input type="email" class="form-control inputs" placeholder="Email">
+                <input type="password" class="form-control inputs" placeholder="Contraseña">
+                <a href="../HTML/Principal.html" class="btn-iniciar">Inicar Sesion</a>
+                <div>
+                  <label>¿No tienes cuenta?</label>
+                  <button class="btn-link cambiar-color" id="button" data-bs-target="#FormularioRegistro" data-bs-toggle="modal" data-bs-dismiss="modal">Registrate aquí</button>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <!-- Formulario Registro -->
+      <form action="">
+        <div class="modal fade" id="FormularioRegistro" aria-hidden="true" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <img src="../Img/logo.png" alt="" height="100px" width="100px">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <h5 class="centrar">Registrarse</h5>
+                  <div class="mb-3 row centrar">
+                    <input id="emailRegister" type="email" class="form-control inputs" placeholder="Email">
+                    <p class="warnings" id="warning1"></p>
+                    <input id="passwordRegister" type="password" class="form-control inputs" placeholder="Contraseña">
+                    <p class="warnings" id="warning2"></p>
+                    <input id="passwordRegister2" type="password" class="form-control inputs" placeholder=" confirme su contraseña">
+                    <p class="warnings" id="warning3"></p>
+                    <button onclick="Registro()" class="btn-iniciar" type="button">Registrarse</button>
+                    <p class="Exito" id="warning4"></p>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <!-- Formulario Registro -->
     </form>
-    <!-- Formulario Registro -->
+    <!-- Formulario Iniciosesion -->
+
+    
 
 <script src="../JAVASCRIPT/Script.js"></script>
 

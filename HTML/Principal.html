@@ -14,7 +14,7 @@
   <!-- navbar -->
   <nav class="navbar">
     <div class="container">
-        <a class="navbar-brand" href="#"><img src="../Img/Logo.png" alt="" height="100px" width="100px"></a>
+        <img src="../Img/Logo.png" alt="" height="100px" width="100px">
         <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#Contenido-navbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -47,33 +47,25 @@
   <section>
     <div class="container elementos">
       <h3>Metas Financieras</h3>
-      <a href="#"><svg id="add" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+      <button class="btn-tables" data-bs-toggle="modal" data-bs-target="#FormularioMetas""><svg id="add" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
         <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
-      </svg></a>
+      </svg></button>
     </div>
   <!-- elementos -->
 
   <!-- tabla 1 -->
     <div class="tabla-metas">
       <table class="table table-hover table1">
-        <thead>
+        <thead class="table-tit">
           <tr>
             <th id="col1" scope="col">Metas</th>
             <th id="col2" scope="col">Progreso</th>
         </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>...</td>
-            <td>...</td>
-          </tr>
-          <tr>
-            <td>...</td>
-            <td>...</td>
-          </tr>
-          <tr>
-            <td>...</td>
-            <td>...</td>
+          <tr id="primerafila">
+            <td>$</td>
+            <td>0%</td>
           </tr>
         </tbody>
       </table>
@@ -159,10 +151,10 @@
                   <button type="button" class="btn-iniciar btn-primary" onclick="CrearCategoria()">Crear Categoría</button>
               </div>
               <div class="mb-3 row centrar">
-                <h5 class="centrar">Lista de Categorias</h5>
-                <input type="text" class="form-control inputs" id="nombreCategoria" placeholder="Nombre de la categoria">
-                <p id="advertencia" class="warnings"></p>
-                <button type="button" class="btn-iniciar btn-primary" style="background-color: #E77777;">Borrar</button>
+                <h5 class="centrar">Borrar Categorias</h5>
+                <input type="text" class="form-control inputs" id="nombreCategoriaborrar" placeholder="Nombre de la categoria a Borrar">
+                <p id="advertencia2" class="warnings"></p>
+                <button onclick="eliminar_Categoria()" type="button" class="btn-iniciar btn-primary" style="background-color: #E77777;">Borrar</button>
             </div>
           </div>
         </div>
@@ -170,6 +162,29 @@
     </div>
     </form>
 <!-- Formulario Crear categoria -->
+
+  <!-- Formulario Agregar metas -->
+  <form>
+    <div class="modal fade" id="FormularioMetas" aria-hidden="true" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <img src="../Img/logo.png" alt="" height="100px" width="100px">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <h5 class="centrar">Agregar Metas</h5>
+              <div class="mb-3 row centrar">
+                  <input type="text" class="form-control inputs" id="monto" placeholder="Monto">
+                  <p id="advertencia3"></p>
+                  <button type="button" class="btn-iniciar btn-primary" onclick="Agregar_Metas()">Agregar</button>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+<!-- Formulario Agregar metas -->
   
   
   <script src="../JAVASCRIPT/Script.js"></script>
