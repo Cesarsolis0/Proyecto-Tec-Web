@@ -135,7 +135,7 @@ function eliminar_Categoria() {
 
         // Limpiar el campo de nombre de categoría después de eliminar
         document.getElementById("nombreCategoriaborrar").value = "";
-        return; // Salir del bucle una vez que se elimina la categoría
+        return;
       }
     }
 
@@ -149,7 +149,7 @@ function Agregar_Metas() {
   // Obtenemos el monto ingresado
   let monto = document.getElementById("monto").value;
 
-  // Validacion para que el monto sea valido
+  // Validamos que el campo no este vacio,que sea un numero y que no sea menor que 0
   if (!monto.trim() || isNaN(parseFloat(monto)) || parseFloat(monto) <= 0) {
     document.getElementById("advertencia3").innerHTML =
       "Ingrese un monto válido";
@@ -165,9 +165,8 @@ function Agregar_Metas() {
   // Obtenemos la primera fila de la tabla
   let primeraFila = document.getElementById("primerafila");
 
-  // Verificar si ya hay contenido en las celdas de la primera fila
+  // Verificar si ya hay contenido en las celdas de la primera fila,si lo hay la elimina
   if (primeraFila) {
-    // Eliminar la primera fila
     tablaMetas.removeChild(primeraFila);
   }
 
@@ -189,4 +188,187 @@ function Agregar_Metas() {
 
   //   limpiamos el monto ingresado para usarlo nuevamente
   document.getElementById("monto").value = "";
+}
+
+// aqui se almacena el total de ingresos
+let totalIngresos = 0;
+
+function Agregar_Ingresos() {
+  // Obtenemos los valores ingresado en lis campos
+  let monto = document.getElementById("Ingreso").value;
+  let fechaInput = document.getElementById("fecha").value;
+  let categoria = document.getElementById("categoria").value;
+  let descripcion = document.getElementById("descripcion").value;
+
+  // obtenemos mensajes de advertencia para actualizarlos luego
+  document.getElementById("advertencia4").innerHTML = "";
+  document.getElementById("advertencia5").innerHTML = "";
+  document.getElementById("advertencia6").innerHTML = "";
+  document.getElementById("advertencia7").innerHTML = "";
+
+  // Valida que el campo no este vacio,si lo ingresado es un numero y que no sea menor que 0
+  if (!monto.trim() || isNaN(parseFloat(monto)) || parseFloat(monto) <= 0) {
+    document.getElementById("advertencia4").innerHTML =
+      "Ingrese un monto válido";
+    return;
+  }
+  // valida que el campo de la fecha no este Vacio
+  if (!fechaInput.trim()) {
+    document.getElementById("advertencia5").innerHTML =
+      "Ingrese una fecha válida";
+    return;
+  }
+  // valida que el campo de categoria no este Vacio
+  if (!categoria.trim()) {
+    document.getElementById("advertencia6").innerHTML =
+      "Ingrese una categoría válida";
+    return;
+  }
+  // valida que el campo de la descripcion no este Vacio
+  if (!descripcion.trim()) {
+    document.getElementById("advertencia7").innerHTML =
+      "Ingrese una descripción válida";
+    return;
+  }
+
+  // sumamos el monto ingresado al total
+  totalIngresos += parseFloat(monto);
+
+  // buscamos y Obtenemos la tabla de ingresos
+  let tablaIngresos = document.querySelector(".table3 tbody");
+
+  // Obtenemos la fila existente con el id "primerafila1"
+  let filaExistente = document.getElementById("primerafila1");
+
+  // Verificamos si la fila existente existe,si exite se elimina
+  if (filaExistente) {
+    tablaIngresos.removeChild(filaExistente);
+  }
+
+  // Crear una nueva fila
+  let nuevaFila = document.createElement("tr");
+
+  // Crear celdas para la nueva fila
+  let celdaDescripcion = document.createElement("td");
+  celdaDescripcion.textContent = descripcion;
+  nuevaFila.appendChild(celdaDescripcion);
+
+  let celdaFecha = document.createElement("td");
+  celdaFecha.textContent = fechaInput;
+  nuevaFila.appendChild(celdaFecha);
+
+  let celdaCategoria = document.createElement("td");
+  celdaCategoria.textContent = categoria;
+  nuevaFila.appendChild(celdaCategoria);
+
+  let celdaMonto = document.createElement("td");
+  celdaMonto.textContent = "$" + monto;
+  nuevaFila.appendChild(celdaMonto);
+
+  // Agregar la nueva fila a la tabla de ingresos
+  tablaIngresos.appendChild(nuevaFila);
+
+  // agregamos los montos ingresados a la tabla total de ingresos
+  let tablaTotal = document.querySelector(
+    ".tabla.centrar tr.monto td:last-child"
+  );
+  tablaTotal.textContent = "$" + totalIngresos.toFixed(2);
+
+  // Limpiar los campos después de agregar la fila para utilizarlos nuevameente
+  document.getElementById("descripcion").value = "";
+  document.getElementById("fecha").value = "";
+  document.getElementById("categoria").value = "";
+  document.getElementById("Ingreso").value = "";
+}
+
+// aqui se almacena el total de gastos
+let totalGastos = 0;
+
+function Agregar_Gastos() {
+  // Obtenemos los valores ingresados en los campos
+  let monto = document.getElementById("Gasto").value;
+  let fechaInput = document.getElementById("fecha2").value;
+  let categoria = document.getElementById("categoria2").value;
+  let descripcion = document.getElementById("descripcion2").value;
+
+  // obtenemos mensajes de advertencia para actualizarlos luego
+  document.getElementById("advertencia8").innerHTML = "";
+  document.getElementById("advertencia9").innerHTML = "";
+  document.getElementById("advertencia10").innerHTML = "";
+  document.getElementById("advertencia11").innerHTML = "";
+
+  // Valida que el campo no este vacio,si lo ingresado es un numero y que no sea menor que 0
+  if (!monto.trim() || isNaN(parseFloat(monto)) || parseFloat(monto) <= 0) {
+    document.getElementById("advertencia8").innerHTML =
+      "Ingrese un monto válido";
+    return;
+  }
+  // valida que el campo de la fecha no este Vacio
+  if (!fechaInput.trim()) {
+    document.getElementById("advertencia9").innerHTML =
+      "Ingrese una fecha válida";
+    return;
+  }
+  // valida que el campo de la categoria no este Vacio
+  if (!categoria.trim()) {
+    document.getElementById("advertencia10").innerHTML =
+      "Ingrese una categoría válida";
+    return;
+  }
+  // valida que el campo de la descripcion no este Vacio
+  if (!descripcion.trim()) {
+    document.getElementById("advertencia11").innerHTML =
+      "Ingrese una descripción válida";
+    return;
+  }
+
+  // sumamos el monto ingresado al total de gastos
+  totalGastos += parseFloat(monto);
+
+  // Obtener la tabla de gastos
+  let tablaGastos = document.querySelector(".table4 tbody");
+
+  // Obtener la fila existente con el id "primerafila2"
+  let filaExistente = document.getElementById("primerafila2");
+
+  // Verificar si la fila existente es un hijo de la tabla
+  if (filaExistente) {
+    // Si la fila existente está presente, eliminarla
+    tablaGastos.removeChild(filaExistente);
+  }
+
+  // Crear una nueva fila
+  let nuevaFila = document.createElement("tr");
+
+  // Crear celdas para la nueva fila
+  let celdaDescripcion = document.createElement("td");
+  celdaDescripcion.textContent = descripcion;
+  nuevaFila.appendChild(celdaDescripcion);
+
+  let celdaFecha = document.createElement("td");
+  celdaFecha.textContent = fechaInput;
+  nuevaFila.appendChild(celdaFecha);
+
+  let celdaCategoria = document.createElement("td");
+  celdaCategoria.textContent = categoria;
+  nuevaFila.appendChild(celdaCategoria);
+
+  let celdaMonto = document.createElement("td");
+  celdaMonto.textContent = "$" + monto;
+  nuevaFila.appendChild(celdaMonto);
+
+  // Agrega la nueva fila a la tabla de gastos
+  tablaGastos.appendChild(nuevaFila);
+
+  // agregamos los monto ingresados a la tabla de total de gastos
+  let tablaTotalGastos = document.querySelector(
+    ".tabla.centrar tr.monto td.gastos:last-child"
+  );
+  tablaTotalGastos.textContent = "$" + totalGastos.toFixed(2);
+
+  // Limpiar los campos después de agregar la fila para utilizarlos nuevamente
+  document.getElementById("descripcion2").value = "";
+  document.getElementById("fecha2").value = "";
+  document.getElementById("categoria2").value = "";
+  document.getElementById("Gasto").value = "";
 }
