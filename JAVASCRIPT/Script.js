@@ -279,6 +279,8 @@ function Agregar_Ingresos() {
   document.getElementById("fecha").value = "";
   document.getElementById("categoria").value = "";
   document.getElementById("Ingreso").value = "";
+
+  IngresoTablaHistorial(fechaInput, categoria, monto);
 }
 
 // aqui se almacena el total de gastos
@@ -371,4 +373,83 @@ function Agregar_Gastos() {
   document.getElementById("fecha2").value = "";
   document.getElementById("categoria2").value = "";
   document.getElementById("Gasto").value = "";
+
+  GastoTablaHistorial(fechaInput, categoria, monto);
 }
+
+function IngresoTablaHistorial(fecha, categoria, monto) {
+  // Obtén la tablaHistorial del Local Storage (si existe)
+  let historialStorage = JSON.parse(localStorage.getItem("historial")) || [];
+
+  // Crea un nuevo objeto para la fila actual
+  let nuevaFila = {
+    fecha: fecha,
+    categoria: categoria,
+    monto: monto,
+  };
+
+  // Agrega la nueva fila al historial
+  historialStorage.push(nuevaFila);
+
+  // Actualiza el Local Storage con el nuevo historial
+  localStorage.setItem("historial", JSON.stringify(historialStorage));
+
+  // Llama a la función para construir la tablaHistorial
+  construirTablaHistorial();
+}
+
+function GastoTablaHistorial(fecha, categoria, monto) {
+  // Obtén la tablaHistorial del Local Storage (si existe)
+  let historialStorage = JSON.parse(localStorage.getItem("historial")) || [];
+
+  // Crea un nuevo objeto para la fila actual
+  let nuevaFila = {
+    fecha: fecha,
+    categoria: categoria,
+    monto: monto,
+  };
+
+  // Agrega la nueva fila al historial
+  historialStorage.push(nuevaFila);
+
+  // Actualiza el Local Storage con el nuevo historial
+  localStorage.setItem("historial", JSON.stringify(historialStorage));
+
+  // Llama a la función para construir la tablaHistorial
+  construirTablaHistorial();
+}
+
+function construirTablaHistorial() {
+  // Obtén la tablaHistorial del Local Storage (si existe)
+  let historialStorage = JSON.parse(localStorage.getItem("historial")) || [];
+
+  // Obtén la tablaHistorial del documento HTML
+  let tablaHistorial = document.querySelector(".table2 tbody");
+
+  // Limpia la tablaHistorial existente
+  tablaHistorial.innerHTML = "";
+
+  // Itera sobre el historial y agrega las filas a la tablaHistorial
+  historialStorage.forEach((fila) => {
+    let nuevaFila = document.createElement("tr");
+
+    let celdafecha = document.createElement("td");
+    celdafecha.textContent = fila.fecha;
+    nuevaFila.appendChild(celdafecha);
+
+    let celdacategoria = document.createElement("td");
+    celdacategoria.textContent = fila.categoria;
+    nuevaFila.appendChild(celdacategoria);
+
+    let celdaMonto = document.createElement("td");
+    celdaMonto.textContent = "$" + fila.monto;
+    // Agrega la clase según sea un ingreso o gasto
+    celdaMonto.classList.add(fila.monto > 0 ? "ingresos" : "gastos");
+    nuevaFila.appendChild(celdaMonto);
+
+    tablaHistorial.appendChild(nuevaFila);
+  });
+}
+
+// Llama a la función para construir la tablaHistorial al cargar la página
+construirTablaHistorial();
