@@ -145,50 +145,69 @@ function eliminar_Categoria() {
   }
 }
 
-function Agregar_Metas() {
-  // Obtenemos el monto ingresado
-  let monto = document.getElementById("monto").value;
-
-  // Validamos que el campo no este vacio,que sea un numero y que no sea menor que 0
-  if (!monto.trim() || isNaN(parseFloat(monto)) || parseFloat(monto) <= 0) {
-    document.getElementById("advertencia3").innerHTML =
-      "Ingrese un monto válido";
+// Función para agregar la meta
+function agregarMeta(monto) {
+  // Validamos que el monto sea un número y no sea menor que 0
+  if (isNaN(parseFloat(monto)) || parseFloat(monto) <= 0) {
     return;
   }
 
   // Limpiar el mensaje de advertencia si el monto es válido
   document.getElementById("advertencia3").innerHTML = "";
 
-  // Obtenemos la tabla
+  // Obtener la tabla
   let tablaMetas = document.querySelector(".table1 tbody");
 
-  // Obtenemos la primera fila de la tabla
+  // Obtener la primera fila de la tabla
   let primeraFila = document.getElementById("primerafila");
 
-  // Verificar si ya hay contenido en las celdas de la primera fila,si lo hay la elimina
+  // Verificar si ya hay contenido en las celdas de la primera fila, si lo hay, la elimina
   if (primeraFila) {
     tablaMetas.removeChild(primeraFila);
   }
 
-  // Crea una nueva fila para la tabla
+  // Crear una nueva fila para la tabla
   let nuevaFila = document.createElement("tr");
 
-  // Crea celda para el monto ingresado
+  // Crear celda para el monto ingresado
   let celdaMeta = document.createElement("td");
   celdaMeta.textContent = "$" + monto;
   nuevaFila.appendChild(celdaMeta);
 
-  // Crea celda para el progreso de la meta
+  // Crear celda para el progreso de la meta
   let celdaProgreso = document.createElement("td");
   celdaProgreso.textContent = "0%";
   nuevaFila.appendChild(celdaProgreso);
 
   // Agregar la nueva fila a la tabla
   tablaMetas.appendChild(nuevaFila);
+}
 
-  //   limpiamos el monto ingresado para usarlo nuevamente
+// Función para agregar la meta y almacenarla en localStorage
+function Agregar_Metas() {
+  // Obtenemos el monto ingresado
+  let monto = document.getElementById("monto").value;
+
+  // Almacenar el monto en localStorage
+  localStorage.setItem("metaMonto", monto);
+
+  // Agregar la meta utilizando la función agregarMeta
+  agregarMeta(monto);
+
+  // Limpiamos el monto ingresado para usarlo nuevamente
   document.getElementById("monto").value = "";
 }
+
+// Cargar el valor de la meta al cargar la página
+window.onload = function () {
+  // Obtener el valor de la meta desde localStorage
+  let monto = localStorage.getItem("metaMonto");
+
+  // Si hay un valor en localStorage, agregar la meta automáticamente
+  if (monto) {
+    // agregarMeta(monto);
+  }
+};
 
 // aqui se almacena el total de ingresos
 let totalIngresos = 0;
@@ -452,4 +471,4 @@ function construirTablaHistorial() {
 }
 
 // Llama a la función para construir la tablaHistorial al cargar la página
-construirTablaHistorial();
+// construirTablaHistorial();

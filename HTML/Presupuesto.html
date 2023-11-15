@@ -11,9 +11,9 @@
 </head>
 <body>
   <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light borde" style="background-color: #FFFFFF;">
-      <div class="container">
-        <a class="navbar-brand" href="../HTML/Principal.html"><img src="../Img/logo.png" alt="" height="100px" width="100px"></a>
+  <nav class="navbar">
+    <div class="container">
+        <img src="../Img/Logo.png" alt="" height="100px" width="100px">
         <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#Contenido-navbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -21,40 +21,40 @@
           <li class="nav-item">
             <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16" style="color: black;">
               <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
-              </svg>
+            </svg>
             </a>
           </li>
           <li class="nav-item Icons">
             <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16" style="color: black;">
               <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
               <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-              </svg>
+            </svg>
             </a>
           </li>
         </ul>
-      </div>
-    </nav>
+    </div>
+  </nav>
   <!-- navbar -->
       
   <!-- tabla Ingresos -->
     <section>
       <h1 class="centrar">Presupuesto</h1>
       <h5 class="centrar">Ingresos</h5>
-      <div class="tabla-Presupuesto">
-        <table class="table table-hover table3">
-          <thead>
+      <div class="tablas">
+        <table class="table table-center">
+          <thead class="table-tit">
             <tr>
-              <th class="col1" scope="col">Descripcion</th>
-              <th scope="col">Fecha</th>
-              <th scope="col">Categoria</th>
-              <th class="col2" scope="col">Monto</th>
+              <th id="t3col1" scope="col">Descripcion</th>
+              <th id="t3col2" scope="col">Fecha</th>
+              <th id="t3col3" scope="col">Categoria</th>
+              <th id="t3col4" scope="col">Monto</th>
             </tr>
           </thead>
           <tbody>
-            <tr id="primerafila1">
-              <td>...</td>
+            <tr id="filaHistorial">
               <td>00/00/00</td>
-              <td>...</td>
+              <td>00/00/00</td>
+              <td>---</td>
               <td>$</td>
             </tr>
           </tbody>
@@ -76,7 +76,7 @@
       <!-- tabla Gastos -->
       <section>
         <h5 class="centrar">Gastos</h5>
-        <div class="tabla-Presupuesto">
+        <div class="tablas">
           <table class="table table-hover table4">
             <thead>
               <tr>

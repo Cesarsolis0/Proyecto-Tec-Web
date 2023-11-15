@@ -1,3 +1,6 @@
+#body2{
+    margin-bottom: 50px;
+}
 #button{
     border: none;
 }
@@ -61,7 +64,7 @@
 .btn-tables{
     border: none;
     background-color: #FFFFFF;
-    padding: 10px 20px;
+    padding: 5px 5px;
     border-radius: 50%;
     box-shadow: 0px 4px 8px rgb(80, 80, 80);
 }
@@ -90,13 +93,10 @@
     border-radius: 0px 10px 0px 0px;
 }
 
-.table1{
+.table-center{
     text-align: center;
 }
 
-.table2{
-    text-align: center;
-}
 .table-tit{
     color: #FFFFFF;
 }
@@ -108,6 +108,9 @@
     background-color: #FFB54D;
 }
 #col5{
+    background-color: #FFB54D;
+}
+#col6{
     background-color: #FFB54D;
     border-radius: 0px 10px 0px 0px;
 }
@@ -130,8 +133,8 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    gap: 10%;
-    margin:10px 70px;
+    gap: 3%;
+    margin:30px 70px;
 }
 
 .btn-input{
@@ -144,14 +147,7 @@
     box-shadow: -1px 1px 5px #888;
 }
 
-.tabla-metas{
-    border: 1px solid black;
-    border-radius: 10px;
-    width: 75%;
-    margin-left: 13%;
-    text-align: center;
-}
-.tabla-Presupuesto{
+.tablas{
     border: 1px solid black;
     border-radius: 10px;
     width: 75%;
@@ -160,14 +156,21 @@
     box-shadow: 0px 4px 8px rgb(80, 80, 80);
 }
 
-.table3 th{
-    background-color:#6EB455 ;
-}
-.col1{
+
+#t3col1{
     border-radius: 10px 0px 0px 0px;
+    background-color: #6EB455;
 }
-.col2{
+#t3col2{
+    background-color: #6EB455;
+}
+
+#t3col3{
+    background-color: #6EB455;
+}
+#t3col4{
     border-radius: 0px 10px 0px 0px;
+    background-color: #6EB455;
 }
 .sec2{
     display: inline-block;
@@ -220,4 +223,10 @@
 
 .gastos{
     color: #E77777;
+}
+
+.btn-link{
+    background-color: #FFFFFF;
+    border: none;
+    text-decoration: none;
 }
