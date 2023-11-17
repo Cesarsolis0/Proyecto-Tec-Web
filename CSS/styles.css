@@ -172,6 +172,22 @@
     border-radius: 0px 10px 0px 0px;
     background-color: #6EB455;
 }
+
+#t4col1{
+    border-radius: 10px 0px 0px 0px;
+    background-color: #FFB54D;
+}
+#t4col2{
+    background-color: #FFB54D;
+}
+
+#t4col3{
+    background-color: #FFB54D;
+}
+#t4col4{
+    border-radius: 0px 10px 0px 0px;
+    background-color: #FFB54D;
+}
 .sec2{
     display: inline-block;
 }
