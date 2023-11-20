@@ -113,7 +113,7 @@ function eliminarMeta() {
   // Limpiar el contenido de la tabla en el HTML
   tablaMetas.innerHTML = "";
 
-  alert("Meta Eliminada");
+  alert("Meta Eliminada Correctamente 👍");
   agregarNuevaFila();
 }
 // Cargar el valor de la meta al cargar la página
