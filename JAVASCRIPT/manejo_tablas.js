@@ -63,7 +63,59 @@ function Agregar_Metas() {
   // Limpiamos el monto ingresado para usarlo nuevamente
   document.getElementById("monto").value = "";
 }
+// Función para agregar una nueva fila a la tabla
+function agregarNuevaFila() {
+  // Obtener la tabla
+  let tablaMetas = document.querySelector(".table-center tbody");
 
+  // Crear una nueva fila para la tabla
+  let nuevaFila = document.createElement("tr");
+
+  // Crear celda para el monto
+  let celdaMeta = document.createElement("td");
+  celdaMeta.textContent = "$";
+  nuevaFila.appendChild(celdaMeta);
+
+  // Crear celda para el progreso
+  let celdaProgreso = document.createElement("td");
+  celdaProgreso.textContent = "0%";
+  nuevaFila.appendChild(celdaProgreso);
+
+  // Establecer el ID de la nueva fila
+  nuevaFila.id = "primerafila";
+
+  // Agregar la nueva fila a la tabla
+  tablaMetas.appendChild(nuevaFila);
+}
+
+// Función para eliminar la meta
+function eliminarMeta() {
+  // Restablecer el valor de la meta creada
+  metaCreada = false;
+
+  // Limpiar el mensaje de advertencia
+  document.getElementById("advertencia3").innerHTML = "";
+
+  // Obtener la tabla
+  let tablaMetas = document.querySelector(".table-center tbody");
+
+  // Obtener la primera fila de la tabla
+  let primeraFila = document.getElementById("primerafila");
+
+  // Verificar si hay contenido en las celdas de la primera fila, si lo hay, la elimina
+  if (primeraFila) {
+    tablaMetas.removeChild(primeraFila);
+  }
+
+  // Limpiar el valor almacenado en localStorage
+  localStorage.removeItem("metaMonto");
+
+  // Limpiar el contenido de la tabla en el HTML
+  tablaMetas.innerHTML = "";
+
+  alert("Meta Eliminada");
+  agregarNuevaFila();
+}
 // Cargar el valor de la meta al cargar la página
 window.onload = function () {
   // Obtener el valor de la meta desde localStorage
