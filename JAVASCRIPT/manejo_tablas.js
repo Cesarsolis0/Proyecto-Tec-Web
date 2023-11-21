@@ -1,7 +1,6 @@
 // establecemos que no se ha creado una metas
 let metaCreada = false;
 
-// Función para agregar la meta
 function agregarMeta(monto) {
   // Validamos que el monto sea un número y no sea menor que 0
   if (isNaN(parseFloat(monto)) || parseFloat(monto) <= 0) {
@@ -18,7 +17,7 @@ function agregarMeta(monto) {
   // Limpiar el mensaje de advertencia si el monto es válido
   document.getElementById("advertencia3").innerHTML = "";
 
-  // Obtener la tabla
+  // Obtener la tabla metas
   let tablaMetas = document.querySelector(".table-center tbody");
 
   // Obtener la primera fila de la tabla
@@ -49,7 +48,6 @@ function agregarMeta(monto) {
   metaCreada = true;
 }
 
-// Función para agregar la meta y almacenarla en localStorage
 function Agregar_Metas() {
   // Obtenemos el monto ingresado
   let monto = document.getElementById("monto").value;
@@ -305,7 +303,7 @@ function Agregar_Gastos() {
   let tablaTotalGastos = document.querySelector(
     "#suma-Gastos tr.monto td.gastos:last-child"
   );
-  tablaTotalGastos.textContent = "$" + totalGastos.toFixed(2);
+  tablaTotalGastos.textContent = "$" + totalGastos;
 
   // Limpiar los campos después de agregar la fila para utilizarlos nuevamente
   document.getElementById("descripcion2").value = "";
@@ -365,6 +363,9 @@ function construirTablaHistorial() {
   // Obtén la tablaHistorial del documento HTML
   let tablaHistorial = document.querySelector("#tablaHistorial tbody");
 
+  // Limpia la tablaHistorial existente
+  tablaHistorial.innerHTML = "";
+
   // Itera sobre el historial y agrega las filas a la tablaHistorial
   historialStorage.forEach((fila) => {
     let nuevaFila = document.createElement("tr");
@@ -379,8 +380,6 @@ function construirTablaHistorial() {
 
     let celdaMonto = document.createElement("td");
     celdaMonto.textContent = "$" + fila.monto;
-    // Agrega la clase según sea un ingreso o gasto
-    celdaMonto.classList.add(fila.monto > 0 ? "ingresos" : "gastos");
     nuevaFila.appendChild(celdaMonto);
 
     tablaHistorial.appendChild(nuevaFila);
@@ -423,7 +422,7 @@ function calcularDiferencia() {
   tablaTotalFinal.classList.add(diferencia >= 0 ? "ingresos" : "gastos");
 
   console.log("Calculando diferencia");
-  calcularProgreso();
+  // calcularProgreso();
 }
 
 function calcularProgreso() {
@@ -452,3 +451,12 @@ function calcularProgreso() {
   console.log("Calculando porcentaje");
   console.log(porcentajeProgreso);
 }
+
+// function limpiarLocalStorage() {
+//   // Limpiar el localStorage
+//   localStorage.clear();
+//   // También puedes añadir mensajes o acciones adicionales si es necesario
+//   console.log("LocalStorage limpiado");
+// }
+
+// limpiarLocalStorage();
