@@ -293,8 +293,13 @@
 }
 
 .btn-link{
-    background-color: #FFFFFF;
+    background-color: transparent;
     border: none;
     text-decoration: none;
     font-family: 'Recursive', sans-serif;
+}
+
+.center{
+    margin-left: 50%;
+    margin-right: 50px;
 }

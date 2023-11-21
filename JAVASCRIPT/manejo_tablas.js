@@ -218,7 +218,7 @@ function Agregar_Ingresos() {
   document.getElementById("fecha").value = "";
   document.getElementById("categoria").value = "";
   document.getElementById("Ingreso").value = "";
-
+  calcularDiferencia();
   IngresoTablaHistorial(fechaInput, categoria, monto);
 }
 
@@ -312,7 +312,7 @@ function Agregar_Gastos() {
   document.getElementById("fecha2").value = "";
   document.getElementById("categoria2").value = "";
   document.getElementById("Gasto").value = "";
-
+  calcularDiferencia();
   GastoTablaHistorial(fechaInput, categoria, monto);
 }
 
@@ -365,9 +365,6 @@ function construirTablaHistorial() {
   // Obtén la tablaHistorial del documento HTML
   let tablaHistorial = document.querySelector("#tablaHistorial tbody");
 
-  // Limpia la tablaHistorial existente
-  tablaHistorial.innerHTML = "";
-
   // Itera sobre el historial y agrega las filas a la tablaHistorial
   historialStorage.forEach((fila) => {
     let nuevaFila = document.createElement("tr");
@@ -391,4 +388,67 @@ function construirTablaHistorial() {
 }
 
 // Llama a la función para construir la tablaHistorial al cargar la página
-// construirTablaHistorial();
+construirTablaHistorial();
+
+function calcularDiferencia() {
+  // Agregar los montos ingresados a la tabla de total de gastos
+  let tablaTotalIngresos = document.querySelector(
+    "#tabla-final tr.montos td.ing:first-child"
+  );
+  tablaTotalIngresos.textContent = "$" + totalIngresos;
+
+  let tablaTotalGastos = document.querySelector(
+    "#tabla-final tr.montos td.gas:nth-child(3)"
+  );
+  tablaTotalGastos.textContent = "$" + totalGastos;
+
+  // Agregar los montos ingresados a la tabla de total final
+  let tablaTotalFinal = document.querySelector(
+    "#tabla-final tr.montos td.total:last-child"
+  );
+
+  // Calcular la diferencia entre ingresos y gastos
+  let diferencia = totalIngresos - totalGastos;
+
+  // Almacenar la diferencia en localStorage
+  localStorage.setItem("diferencia", diferencia);
+
+  // Mostrar la diferencia en el elemento
+  tablaTotalFinal.textContent = "$" + diferencia;
+
+  // Asegurarse de que la clase anterior se limpie antes de agregar la nueva
+  tablaTotalFinal.classList.remove("ingresos", "gastos");
+
+  // Agregar la clase según la diferencia
+  tablaTotalFinal.classList.add(diferencia >= 0 ? "ingresos" : "gastos");
+
+  console.log("Calculando diferencia");
+  calcularProgreso();
+}
+
+function calcularProgreso() {
+  // Obtener el monto de la meta desde localStorage
+  let metaMonto = parseFloat(localStorage.getItem("metaMonto")) || 0;
+  console.log(metaMonto);
+  let diferencia = parseFloat(localStorage.getItem("diferencia")) || 0;
+  console.log(diferencia);
+  console.log("Calculando porcentaje");
+  // agregamos los monto ingresados a la tabla de total de gastos
+  let tablaporcentaje = document.querySelector(
+    "#tabla-metas tr.porcentaje td.porcent:last-child"
+  );
+
+  // Calcular el porcentaje de progreso
+  let porcentajeProgreso = (diferencia / metaMonto) * 100;
+  console.log(porcentajeProgreso);
+
+  // Limitar el porcentaje a 100%
+  porcentajeProgreso = Math.min(porcentajeProgreso, 100);
+
+  tablaporcentaje.textContent = porcentajeProgreso.toFixed(2) + "%";
+  // Almacenar el porcentaje de progreso en localStorage
+  localStorage.setItem("porcentajeProgreso", porcentajeProgreso);
+
+  console.log("Calculando porcentaje");
+  console.log(porcentajeProgreso);
+}
