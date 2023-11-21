@@ -1,7 +1,8 @@
+
 import { initializeApp } from "firebase/app"
 import {
-    getFirestore, collection, getDocs, onSnapshot
-} from "firebase/firestore"
+    getAuth, createUserWithEmailAndPassword
+} from "firebase/auth"
 
 const firebaseConfig = {
     apiKey: "AIzaSyDjYrnxwFtaEi5A5EYEp_hC09hN9yz0ov8",
@@ -12,15 +13,26 @@ const firebaseConfig = {
     appId: "1:94005217:web:8be26208ccf4bec90c14a0",
     measurementId: "G-VXMVC0PBWQ"
   };
+  
+  firebase.initializeApp(firebaseConfig)
 
-  firebasa.initializeApp(firebaseConfig)
+  const auth = getAuth()
 
-  const db = getFirestore()
+  //registrar usuario
+  const signupForm = document.querySelector(".signup")
+  signupForm.addEventListener("submit", (e) => {
+    e.preventDefault()
 
-  const colRef = collection(db, "Meta")
+    const email = signupForm.email.value
+    const password = signupForm.password.value
 
-  getDocs(colRef)
-    .then((snapshot) => {
-        console.log(snapshot.docs)
-    })
+    createUserWithEmailAndPassword(auth, email, password)
+        .then((cred) => {
+            console.log("user created", cred.user)
+            signupForm.reset()
+        })
+        .catch((err) => {
+            console.log(err.message)
+        })
+  })
 
