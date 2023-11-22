@@ -174,7 +174,7 @@ function Agregar_Ingresos() {
   // buscamos y Obtenemos la tabla de ingresos
   let tablaIngresos = document.querySelector("#tablaIngresos tbody");
 
-  // Obtenemos la fila existente con el id "primerafila1"
+  // Obtenemos la fila existente con el id "filaingresos"
   let filaExistente = document.getElementById("filaIngresos");
 
   // Verificamos si la fila existente existe,si exite se elimina
@@ -315,7 +315,7 @@ function Agregar_Gastos() {
 }
 
 function IngresoTablaHistorial(fecha, categoria, monto) {
-  // Obtén la tablaHistorial del Local Storage (si existe)
+  // Obténemos el historial de ingresos en formato cadena json y lo convierte a un objeto javascript
   let historialStorage = JSON.parse(localStorage.getItem("historial")) || [];
 
   // Crea un nuevo objeto para la fila actual
